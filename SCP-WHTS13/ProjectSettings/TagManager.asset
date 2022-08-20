@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Footsteps/dirt
+  - Footsteps/metal
+  - Footsteps/concrete
+  - HealthBar
+  - Canvas
+  - PostProcess
+  - GameManager
+  - ObjectDrop
+  - ItemParent
+  - Item/Flashlight
+  - RoomManager
+  - Document/106
+  - Document/085
+  - Enemy
+  - SCP/303
+  - SCP/008
+  - SCP/173
+  - ObjectHoldPlace
+  - TextInfo
+  - PP/Item
+  - PP/Game
+  - Elevator
+  - DoorCheck
+  - DoorCheck2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - 
+  - 
+  - Interacteble
+  - PostProcessing
+  - Enemys
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
