@@ -41,6 +41,7 @@ public class ElevatorButton : Interacteble
                 {
                     myDoor1.Play("dor_close", 0, 0.0f);
                     playerAudioSource.PlayOneShot(doorClipsclose[UnityEngine.Random.Range(0, doorClipsclose.Length - 1)]);
+                    GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened=false;
                 }
                 step1[0]=false;
             }
@@ -50,7 +51,7 @@ public class ElevatorButton : Interacteble
                 _player.GetComponent<FirstPersonController>().CanMove=false;
                 CharacterController cc = _player.GetComponent<CharacterController>();
                 cc.enabled=false;
-                _player.transform.position += new Vector3(0,-10,0);
+                _player.transform.position += new Vector3(0,-50,0);
                 cc.enabled=true;
                 _player.GetComponent<FirstPersonController>().CanMove=true;
                 step1[1]=false;
@@ -78,6 +79,7 @@ public class ElevatorButton : Interacteble
                 {
                     myDoor1.Play("dor_close", 0, 0.0f);
                     playerAudioSource.PlayOneShot(doorClipsclose[UnityEngine.Random.Range(0, doorClipsclose.Length - 1)]);
+                    GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened=false;
                 }
                 step2[0]=false;
             }
@@ -87,7 +89,7 @@ public class ElevatorButton : Interacteble
                 _player.GetComponent<FirstPersonController>().CanMove=false;
                 CharacterController cc = _player.GetComponent<CharacterController>();
                 cc.enabled=false;
-                _player.transform.position += new Vector3(0,10,0);
+                _player.transform.position += new Vector3(0,50,0);
                 cc.enabled=true;
                 _player.GetComponent<FirstPersonController>().CanMove=true;
                 step2[1]=false;
