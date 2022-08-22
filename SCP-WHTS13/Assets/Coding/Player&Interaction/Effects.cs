@@ -54,6 +54,7 @@ public class Effects : MonoBehaviour
     {
         _player= GameObject.FindWithTag("Player");
         _playerAudioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
+        _text = GameObject.FindWithTag("TextInfo").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
