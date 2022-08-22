@@ -116,6 +116,8 @@ public class Effects : MonoBehaviour
             if(_energized==true)
                 _energizedTimer=2;
             _stimulatedTimer=2;
+            if(_chilled==true)
+                _chilledTimer=2;
         }
         if(_cured==true)
         {
