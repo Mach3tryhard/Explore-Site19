@@ -225,6 +225,11 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._cured=true;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP500=gameObjectOfItem;
         }
+        if(name=="SCP-484")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._chilled=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP484=gameObjectOfItem;
+        }
         if(name=="SCP-207")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energized=true;

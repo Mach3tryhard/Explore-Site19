@@ -10805,6 +10805,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 89dc5a550982b0f4fb5baab1ce22fdd9, type: 2}
+    - target: {fileID: 7763261089133723222, guid: b7c2f428d1ece854b9b1bd6d7603f340, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.152083
+      objectReference: {fileID: 0}
     - target: {fileID: 7839271712056481080, guid: b7c2f428d1ece854b9b1bd6d7603f340, type: 3}
       propertyPath: m_Name
       value: Room536

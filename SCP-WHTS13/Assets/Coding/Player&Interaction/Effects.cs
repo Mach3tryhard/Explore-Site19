@@ -18,6 +18,12 @@ public class Effects : MonoBehaviour
     [SerializeField] private GameObject _curedDisplay;
     public GameObject _GO_SCP500;
 
+    [Header("SCP 484")]
+    public bool _chilled=false; 
+    public float _chilledTimer=10;
+    [SerializeField] private GameObject _chilledDisplay;
+    public GameObject _GO_SCP484;
+
     [Header("SCP 207")]
     public bool _energized=false; 
     public float _energizedTimer=1000;
@@ -133,6 +139,40 @@ public class Effects : MonoBehaviour
             _curedTimer=10;
             /// SPEED BACK
             _curedDisplay.GetComponent<RawImage>().enabled=false;
+        }
+        /// SCP-484
+        if(_chilled==true && _chilledTimer==10)
+        {
+            _text.enabled=true;
+            _text.text = "This is chill yo.";
+            _chilledDisplay.GetComponent<RawImage>().enabled=true;
+            _playerAudioSource.PlayOneShot(_GO_SCP484.GetComponent<ItemPickup>().useClips[0]);
+            if(_energized==true)
+                _energizedTimer=2;
+            if(_stimulated==true)
+            _stimulatedTimer=2;
+        }
+        if(_chilled==true)
+        {
+            _chilledTimer-=Time.deltaTime;
+            /// HP AND SPRINT
+            if(_player.GetComponent<FirstPersonController>().currentHealth>100)
+                _player.GetComponent<FirstPersonController>().currentHealth=100;
+            if(_player.GetComponent<FirstPersonController>().currentHealth<100)
+                _player.GetComponent<FirstPersonController>().currentHealth+=1;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            if(_chilledTimer<=2)
+            {
+                _chilledDisplay.GetComponent<RawImage>().enabled=!_chilledDisplay.GetComponent<RawImage>().enabled;
+            }
+        }
+        if(_chilledTimer<0)
+        {
+            _text.enabled=false;
+            _chilled=false;
+            _chilledTimer=10;
+            _chilledDisplay.GetComponent<RawImage>().enabled=false;
         }
         /// SCP-207
         if(_energized==true && _energizedTimer==1000)
