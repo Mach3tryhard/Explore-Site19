@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.25
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f44925d3e4f60964191f7a474b6cd07b, type: 2}
 --- !u!1 &32925820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1514,7 @@ GameObject:
   - component: {fileID: 704499896}
   - component: {fileID: 704499895}
   - component: {fileID: 704499894}
+  - component: {fileID: 704499898}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1649,6 +1650,21 @@ Transform:
   m_Father: {fileID: 1617812117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &704499898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704499893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  MaximumStress: 0.6
+  Range: 45
 --- !u!1001 &711657292
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ TagManager:
   - DoorCheck
   - DoorCheck2
   - Document
+  - SCP/1874
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,9 @@ public class SCP1874 : MonoBehaviour
     [SerializeField]private AudioSource playerAudioSource = default;
     [SerializeField] private AudioClip[] dmgClips = default;
     [SerializeField] Animator EnemyAnimator;
+    [SerializeField] GameObject TheGO;
     public float damTimer;
-    public float damageDealt=1000;
+    public float damageDealt=100;
 
     void Start()
     {
@@ -29,10 +30,11 @@ public class SCP1874 : MonoBehaviour
         {
             if(damTimer<=0)
             {
+                GameObject.FindWithTag("SCP/1874").AddComponent<TraumaInducer>();
                 //EnemyAnimator.SetBool("IsAttacking", true);
                 playerAudioSource.PlayOneShot(dmgClips[UnityEngine.Random.Range(0, dmgClips.Length - 1)]);
                 FirstPersonController.OnTakeDamage(damageDealt);
-                damTimer=2;
+                damTimer=5;
             }
         }
     }
