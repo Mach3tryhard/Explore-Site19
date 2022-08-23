@@ -62,7 +62,7 @@ public class Effects : MonoBehaviour
         ///KILL
         if(_player.GetComponent<FirstPersonController>().currentHealth<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             print("DEAD");
         }
         /// EPIPEN
