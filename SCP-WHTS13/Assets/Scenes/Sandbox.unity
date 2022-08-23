@@ -35906,7 +35906,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34352
+  m_Name: pb_Mesh32652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48128,7 +48128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
-  animator: {fileID: 0}
+  animator: {fileID: 924648789}
 --- !u!54 &1702729423
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -441,7 +441,7 @@ public class FirstPersonController : MonoBehaviour
             StopCoroutine(regeneratingHealth);
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         print("DEAD");
     }
 
