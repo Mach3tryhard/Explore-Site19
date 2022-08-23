@@ -169,6 +169,7 @@ public class Item : ScriptableObject
         if(name=="StimPack")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._stimulated=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._stimulatedTimer=9.5f;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_Epipen=gameObjectOfItem;
         }
         #region Documents
@@ -190,26 +191,31 @@ public class Item : ScriptableObject
         if(name=="SCP-500")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._cured=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._curedTimer=10;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP500=gameObjectOfItem;
         }
         if(name=="SCP-484")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._chilled=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._chilledTimer=10;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP484=gameObjectOfItem;
         }
         if(name=="SCP-207")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energized=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._energizedTimer=1000;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP207=gameObjectOfItem;
         }
         if(name=="SCP-198")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._hurt=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._hurtTimer=1000;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP198=gameObjectOfItem;
         }
         if(name=="SCP-215" && isUsing==false)
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoiaTimer=19;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP215=gameObjectOfItem;
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
             isUsing=true;
