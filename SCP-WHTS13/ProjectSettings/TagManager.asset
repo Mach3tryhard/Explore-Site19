@@ -15,8 +15,6 @@ TagManager:
   - ItemParent
   - Item/Flashlight
   - RoomManager
-  - Document/106
-  - Document/085
   - Enemy
   - SCP/303
   - SCP/008
@@ -28,6 +26,7 @@ TagManager:
   - Elevator
   - DoorCheck
   - DoorCheck2
+  - Document
   layers:
   - Default
   - TransparentFX

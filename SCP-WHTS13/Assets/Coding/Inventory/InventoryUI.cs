@@ -24,7 +24,8 @@ public class InventoryUI : MonoBehaviour
     {
         if(Input.GetButtonDown("Inventory"))
         {
-            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook; 
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook;
+            GameObject.FindWithTag("Document").GetComponent<Image>().enabled=false;
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract;
             if(Cursor.lockState==CursorLockMode.Locked)Cursor.lockState = CursorLockMode.None;

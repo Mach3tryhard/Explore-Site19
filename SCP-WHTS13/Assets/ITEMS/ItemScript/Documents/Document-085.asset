@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54c99bcbcaefe347baa0186a6b50950, type: 3}
-  m_Name: Document-106
+  m_Name: Document-085
   m_EditorClassIdentifier: 
-  name: Document-106
+  name: Document-085
   icon: {fileID: 21300000, guid: a254e7bb1571c6e479691f543cc6df0b, type: 3}
   isUsing: 0
   gameObjectOfItem: {fileID: 0}
   oneTimeUse: 0
+  document: {fileID: 21300000, guid: b3e9a92c9fa8acb4b9ebce1cd2c9b773, type: 3}
+  isDocument: 1

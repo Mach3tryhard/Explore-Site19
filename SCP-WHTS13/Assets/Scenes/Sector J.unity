@@ -7931,6 +7931,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1031457399}
     m_Modifications:
+    - target: {fileID: 6674281901318610708, guid: 11149cb7668bd254e95660c6c9938407, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8da39ed54b8ce6e4da6d3fb35d001e48, type: 2}
     - target: {fileID: 6674281901998532752, guid: 11149cb7668bd254e95660c6c9938407, type: 3}
       propertyPath: m_Name
       value: ACB
@@ -7987,5 +7991,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6674281902502254533, guid: 11149cb7668bd254e95660c6c9938407, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec65aeae6606d034799cedac3b1318ec, type: 2}
+    - target: {fileID: 8249616082788707665, guid: 11149cb7668bd254e95660c6c9938407, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7eff6151958eb014c8ddffa5875b0cd2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11149cb7668bd254e95660c6c9938407, type: 3}

@@ -13,6 +13,8 @@ public class Item : ScriptableObject
     public bool isUsing = false;
     public GameObject gameObjectOfItem;
     public bool oneTimeUse = true;
+    public Sprite document = null;
+    public bool isDocument = false;
 
     public virtual void Use()
     {
@@ -170,53 +172,18 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_Epipen=gameObjectOfItem;
         }
         #region Documents
-        if(name=="Document-085")
+        if(isDocument)
         {
-            if(isUsing==false)
-            {
-                playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-                GameObject.FindWithTag("Document/085").GetComponent<Image>().enabled=true;
-                Debug.Log("Activating" + name);
-                isUsing = true;
-                ///Scoaterea Inventarului
-                GameObject.FindWithTag("Canvas").GetComponent<InventoryUI>().inventoryUI.SetActive(false);
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook; 
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract; 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else
-            if(isUsing==true)
-            {
-                playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-                GameObject.FindWithTag("Document/085").GetComponent<Image>().enabled=false;
-                Debug.Log("DEActivating" + name);
-                isUsing = false;
-            }
-        }
-        if(name=="Document-106")
-        {
-            if(isUsing==false)
-            {
-                playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-                GameObject.FindWithTag("Document/106").GetComponent<Image>().enabled=true;
-                Debug.Log("Activating" + name);
-                isUsing = true;
-                ///Scoaterea Inventarului
-                GameObject.FindWithTag("Canvas").GetComponent<InventoryUI>().inventoryUI.SetActive(false);
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook; 
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract; 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else
-            if(isUsing==true)
-            {
-                playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-                GameObject.FindWithTag("Document/106").GetComponent<Image>().enabled=false;
-                Debug.Log("DEActivating" + name);
-                isUsing = false;
-            }
+            playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
+            GameObject.FindWithTag("Document").GetComponent<Image>().sprite=document;
+            GameObject.FindWithTag("Document").GetComponent<Image>().enabled=true;
+            isUsing = true;
+            ///Scoaterea Inventarului
+            GameObject.FindWithTag("Canvas").GetComponent<InventoryUI>().inventoryUI.SetActive(false);
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook; 
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canInteract; 
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         #endregion 
         #region SCPS
