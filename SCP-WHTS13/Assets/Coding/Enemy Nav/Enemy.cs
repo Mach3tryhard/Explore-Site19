@@ -10,12 +10,14 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     Transform target;
     NavMeshAgent agent;
+    AudioSource audioSource;
 
     void Start()
     {
         target = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = transform.GetChild(0).GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -23,9 +25,8 @@ public class Enemy : MonoBehaviour
 
         if(distance <= lookRadius)
         {
-            animator.SetBool("IsWalking", true);
+            //animator.SetBool("IsWalking", true);
             agent.SetDestination(target.position);
-            //agent.stoppingDistance in loc de 2
             if(distance<= 2)
             {
                 FaceTarget();
@@ -34,11 +35,13 @@ public class Enemy : MonoBehaviour
         float velocity = agent.velocity.magnitude;
         if(velocity==0)
         {
+            audioSource.mute=true;
             animator.SetBool("IsWalking", false);
         }
         else
         {
             animator.SetBool("IsWalking", true);
+            audioSource.mute=false;
         }
     }
 
