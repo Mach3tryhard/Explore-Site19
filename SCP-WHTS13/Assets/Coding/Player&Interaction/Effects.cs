@@ -262,12 +262,6 @@ public class Effects : MonoBehaviour
             _paranoiaDisplay.GetComponent<RawImage>().enabled=true;
             GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
             _CAPP.enabled.value=true;
-            _paranoiaTimer+=Time.deltaTime;
-            if(_paranoiaTimer>19)
-            {
-                _playerAudioSource.PlayOneShot(_GO_SCP215.GetComponent<ItemPickup>().useClips[1]);
-                _paranoiaTimer=0;
-            }
         }
         if(_paranoia==false)
         {

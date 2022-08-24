@@ -215,7 +215,6 @@ public class Item : ScriptableObject
         if(name=="SCP-215" && isUsing==false)
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia=true;
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoiaTimer=19;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP215=gameObjectOfItem;
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
             isUsing=true;
