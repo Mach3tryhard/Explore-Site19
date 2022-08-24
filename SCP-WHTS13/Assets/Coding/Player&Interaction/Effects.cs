@@ -110,8 +110,12 @@ public class Effects : MonoBehaviour
         /// SCP-500
         if(_cured==true && _curedTimer==10)
         {
-            _text.enabled=true;
-            _text.text = "You feel AMAZING.";
+            
+            if(_hurt!=true)
+            {
+                _text.enabled=true;
+                _text.text = "You feel AMAZING.";
+            }
             _curedDisplay.GetComponent<RawImage>().enabled=true;
             _playerAudioSource.PlayOneShot(_GO_SCP500.GetComponent<ItemPickup>().useClips[0]);
             if(_energized==true)

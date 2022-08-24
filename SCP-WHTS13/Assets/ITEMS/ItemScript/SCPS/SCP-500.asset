@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SCP-500
   m_EditorClassIdentifier: 
   name: SCP-500
-  icon: {fileID: 21300000, guid: 1623927e903b26640abf54b384f086f2, type: 3}
+  icon: {fileID: 21300000, guid: 47a1f83a4b758e442b22446b2ded696f, type: 3}
   isUsing: 0
   gameObjectOfItem: {fileID: 0}
   oneTimeUse: 1
+  document: {fileID: 0}
+  isDocument: 0

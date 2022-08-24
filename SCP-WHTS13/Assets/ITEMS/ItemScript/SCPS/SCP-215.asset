@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SCP-215
   m_EditorClassIdentifier: 
   name: SCP-215
-  icon: {fileID: 21300000, guid: ac2c8402c45d1d641841225e0c13b837, type: 3}
+  icon: {fileID: 21300000, guid: 457732ed583715940acbec9f68570073, type: 3}
   isUsing: 0
   gameObjectOfItem: {fileID: 0}
   oneTimeUse: 0
+  document: {fileID: 0}
+  isDocument: 0

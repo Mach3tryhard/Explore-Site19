@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SCP-198
   m_EditorClassIdentifier: 
   name: SCP-198
-  icon: {fileID: 21300000, guid: 54c956d2511d28041977d5be4996a751, type: 3}
+  icon: {fileID: 21300000, guid: 3018b36038f637446aa1f903389cee89, type: 3}
   isUsing: 0
   gameObjectOfItem: {fileID: 0}
   oneTimeUse: 1
+  document: {fileID: 0}
+  isDocument: 0

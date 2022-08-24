@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        if(transform.GetComponent<AudioSource>() != null)
+        if(transform.GetChild(0).GetComponent<AudioSource>() != null)
             audioSource = transform.GetChild(0).GetComponent<AudioSource>();
     }
     void Update()
@@ -36,15 +36,15 @@ public class Enemy : MonoBehaviour
         float velocity = agent.velocity.magnitude;
         if(velocity==0)
         {
-            if(transform.GetComponent<AudioSource>() != null)
+            if(transform.GetChild(0).GetComponent<AudioSource>() != null)
                 audioSource.mute=true;
             animator.SetBool("IsWalking", false);
         }
         else
         {
-            if(transform.GetComponent<AudioSource>() != null)
-                animator.SetBool("IsWalking", true);
-            audioSource.mute=false;
+            if(transform.GetChild(0).GetComponent<AudioSource>() != null)
+                audioSource.mute=false;
+            animator.SetBool("IsWalking", true);
         }
     }
 
