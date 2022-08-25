@@ -82,8 +82,8 @@ public class Item : ScriptableObject
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
                 ///Hp grown
-                GameObject.FindWithTag("SCP/173").GetComponent<SCP1874>().damageDealt/=2;
-                GameObject.FindWithTag("SCP/008").GetComponent<SCP1874>().damageDealt/=2;
+                GameObject.FindWithTag("SCP/173").GetComponent<SCPXXXX>().damageDealt/=2;
+                GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt/=2;
                 ///movement slowed
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=3f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=6f;
@@ -97,8 +97,8 @@ public class Item : ScriptableObject
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[1]);
                 ///Hp grown
-                GameObject.FindWithTag("SCP/173").GetComponent<SCP1874>().damageDealt*=2;
-                GameObject.FindWithTag("SCP/008").GetComponent<SCP1874>().damageDealt*=2;
+                GameObject.FindWithTag("SCP/173").GetComponent<SCPXXXX>().damageDealt*=2;
+                GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt*=2;
                 ///movement slowed
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=4f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=8f;
@@ -113,7 +113,7 @@ public class Item : ScriptableObject
             if(isUsing==false)
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-                GameObject.FindWithTag("SCP/008").GetComponent<SCP1874>().damageDealt=0;
+                GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt=0;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=3f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=6f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=1.5f;
@@ -125,7 +125,7 @@ public class Item : ScriptableObject
             if(isUsing==true)
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[1]);
-                GameObject.FindWithTag("SCP/008").GetComponent<SCP1874>().damageDealt=20;
+                GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt=20;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=4f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=8f;
                 GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=2f;
@@ -178,7 +178,6 @@ public class Item : ScriptableObject
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
             GameObject.FindWithTag("Document").GetComponent<Image>().sprite=document;
             GameObject.FindWithTag("Document").GetComponent<Image>().enabled=true;
-            isUsing = true;
             ///Scoaterea Inventarului
             GameObject.FindWithTag("Canvas").GetComponent<InventoryUI>().inventoryUI.SetActive(false);
             GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook = !GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().canLook; 
