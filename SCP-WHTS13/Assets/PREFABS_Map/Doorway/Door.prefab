@@ -1143,14 +1143,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Range
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 5130
+      objectReference: {fileID: 0}
+    - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_UseColorTemperature
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
@@ -1161,10 +1169,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 2526320597565166476, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526320597565166476, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.24999997
+      objectReference: {fileID: 0}
     - target: {fileID: 4966409665695033816, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3ece7a2c90cf4d54289b38d308e4b66b, type: 2}
+    - target: {fileID: 8029350660757771171, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
 --- !u!1 &6934745710350319251 stripped
@@ -1946,11 +1966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Range
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -1183426384091520175, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -1964,10 +1984,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button1
       objectReference: {fileID: 0}
+    - target: {fileID: 2526320597565166476, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526320597565166476, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.276
+      objectReference: {fileID: 0}
     - target: {fileID: 4966409665695033816, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3ece7a2c90cf4d54289b38d308e4b66b, type: 2}
+    - target: {fileID: 8029350660757771171, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42c7215173aae3b43a124a31b85a16b8, type: 3}
 --- !u!1 &6934745709157989922 stripped
