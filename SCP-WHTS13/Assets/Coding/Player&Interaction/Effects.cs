@@ -264,14 +264,14 @@ public class Effects : MonoBehaviour
             _text.enabled=true;
             _text.text = "You feel like the objects are watching you.";
             _paranoiaDisplay.GetComponent<RawImage>().enabled=true;
-            GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
-            _CAPP.enabled.value=true;
+            //GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
+            //_CAPP.enabled.value=true;
         }
         if(_paranoia==false)
         {
-            GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
+            //GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
             _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
-            _CAPP.enabled.value=false;
+            //_CAPP.enabled.value=false;
             _paranoiaTimer=19;
         }
     }

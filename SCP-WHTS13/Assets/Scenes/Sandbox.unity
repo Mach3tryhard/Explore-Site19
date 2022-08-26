@@ -6509,7 +6509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh434794
+  m_Name: pb_Mesh120368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6817,7 +6817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5ba74a1236fccc47938885e14500a6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.123
+      value: 1.193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5ba74a1236fccc47938885e14500a6b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16236,8 +16236,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.349036, y: 0.75517243, z: 0.21453539}
-  m_Center: {x: -0.0015799999, y: 0.37692583, z: -0.01657335}
+  m_Size: {x: 0.349036, y: 0.7551723, z: 0.17282246}
+  m_Center: {x: -0.0015799998, y: 0.37692586, z: 0.0042831125}
 --- !u!54 &546745125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27858,7 +27858,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh436472
+  m_Name: pb_Mesh122046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36597,7 +36597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fd1187a81597b0478eabc5ce3fd3672, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fd1187a81597b0478eabc5ce3fd3672, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38313,7 +38313,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh437698
+  m_Name: pb_Mesh123272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40495,7 +40495,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh435054
+  m_Name: pb_Mesh120628
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59643,61 +59643,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057392442}
   m_CullTransparentMesh: 1
---- !u!1 &2057763012
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2057763014}
-  - component: {fileID: 2057763013}
-  m_Layer: 0
-  m_Name: Decal Projector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2057763013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057763012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 31d0dcc6f2dd4e4408d18036a2c93862, type: 2}
-  m_DrawDistance: 1000
-  m_FadeScale: 0.9
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
-  m_UVBias: {x: 0, y: 0}
-  m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 1}
-  m_Size: {x: 2, y: 2, z: 2}
-  m_FadeFactor: 1
---- !u!4 &2057763014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057763012}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -88.10781, y: 1.32, z: 142.85501}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066614937
 GameObject:
   m_ObjectHideFlags: 0
@@ -60318,6 +60263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f8ef8c38c9164cb751052ea4a4e99, type: 2}
     - target: {fileID: 919132149155446097, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
       propertyPath: m_Name
       value: Medkit
@@ -60325,6 +60274,34 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000059258
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000119209275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000034134356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 791cfa54f6733a34bb88beb9fca48d7b, type: 3}
       propertyPath: m_Layer
