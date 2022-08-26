@@ -203,8 +203,6 @@ public class Effects : MonoBehaviour
             _text.text = "This is chill yo.";
             _chilledDisplay.GetComponent<RawImage>().enabled=true;
             _playerAudioSource.PlayOneShot(_GO_SCP484.GetComponent<ItemPickup>().useClips[0]);
-            if(_energized==true)
-                _energizedTimer=2;
             if(_stimulated==true)
             _stimulatedTimer=2;
         }
@@ -212,10 +210,8 @@ public class Effects : MonoBehaviour
         {
             _chilledTimer-=Time.deltaTime;
             /// HP AND SPRINT
-            if(_player.GetComponent<FirstPersonController>().currentHealth>100)
-                _player.GetComponent<FirstPersonController>().currentHealth=100;
             if(_player.GetComponent<FirstPersonController>().currentHealth<100)
-                _player.GetComponent<FirstPersonController>().currentHealth+=1;
+                _player.GetComponent<FirstPersonController>().currentHealth+=Time.deltaTime;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
             if(_chilledTimer<=2)
