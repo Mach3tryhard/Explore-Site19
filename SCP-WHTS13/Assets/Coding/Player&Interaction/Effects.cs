@@ -5,12 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
 using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Effects : MonoBehaviour
 {
     [Header("General")]
     public AudioSource _playerAudioSource;
     public TextMeshProUGUI _text;
+    public Volume _volume;
 
     [Header("SCP 1079")]
     public float _candy=0; 
@@ -19,6 +22,7 @@ public class Effects : MonoBehaviour
     public GameObject _GO_SCP1079;
     public GameObject _candyDecal;
     public float _candyDecalTimer=1;
+    private UnityEngine.Rendering.Universal.Vignette _candyPP;
 
     [Header("SCP 500")]
     public bool _cured=false; 
@@ -48,7 +52,6 @@ public class Effects : MonoBehaviour
     public float _paranoiaTimer=19;
     [SerializeField] private GameObject _paranoiaDisplay;
     public GameObject _GO_SCP215;
-    public ChromaticAberration _CAPP=null;
 
     [Header("Epipen")]
     public bool _stimulated=false; 
@@ -63,6 +66,8 @@ public class Effects : MonoBehaviour
         _player= GameObject.FindWithTag("Player");
         _playerAudioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         _text = GameObject.FindWithTag("TextInfo").GetComponent<TextMeshProUGUI>();
+        _volume = GameObject.FindWithTag("ItemVolume").GetComponent<Volume>();
+        _volume.profile.TryGet(out _candyPP);
     }
 
     void Update()
@@ -116,7 +121,7 @@ public class Effects : MonoBehaviour
             _stimulatedDisplay.GetComponent<RawImage>().enabled=false;
         }
         /// SCP-1079
-        if(_candy>0 && _candyTimer%15==0)
+        if(_candy>0 && _candyTimer%15==0 && _candyTimer!=0)
         {
             _text.enabled=true;
             _text.text = "You feel a tingling sensations.";
@@ -127,10 +132,12 @@ public class Effects : MonoBehaviour
         {
             _candyTimer-=Time.deltaTime;
             _candyDecalTimer-=Time.deltaTime;
+            _candyPP.intensity.value+=Time.deltaTime/100;
             ///
             if(_candyDecalTimer<=0)
             {
-                Instantiate(_candyDecal, _player.transform.position, Quaternion.identity);
+                Instantiate(_candyDecal, _player.transform.position, Quaternion.Euler(90,0,Random.Range(0f, 180.0f)),_candyDecal.transform.parent.gameObject.transform);
+                _playerAudioSource.PlayOneShot(_GO_SCP1079.GetComponent<ItemPickup>().useClips[UnityEngine.Random.Range(1, _GO_SCP1079.GetComponent<ItemPickup>().useClips.Length - 1)]);
                 _candyDecalTimer=1;
             }
             if(_candyTimer<=2)
@@ -145,6 +152,7 @@ public class Effects : MonoBehaviour
         {
             _text.enabled=false;
             _candyTimer=0;
+            _candyPP.intensity.value=0f;
             /// SPEED BACK
             _candyDisplay.GetComponent<RawImage>().enabled=false;
         }
@@ -305,14 +313,10 @@ public class Effects : MonoBehaviour
             _text.enabled=true;
             _text.text = "You feel like the objects are watching you.";
             _paranoiaDisplay.GetComponent<RawImage>().enabled=true;
-            //GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
-            //_CAPP.enabled.value=true;
         }
         if(_paranoia==false)
         {
-            //GameObject.FindWithTag("PP/Item").GetComponent<PostProcessVolume>().profile.TryGetSettings(out _CAPP);
             _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
-            //_CAPP.enabled.value=false;
             _paranoiaTimer=19;
         }
     }

@@ -1084,6 +1084,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37fa64554d04fc2498579034db0d883f, type: 3}
   useClips:
   - {fileID: 8300000, guid: ef56c102653ba584495fa22827452595, type: 3}
+  - {fileID: 8300000, guid: 4791624836e7f0741a0f237da5dd5555, type: 3}
+  - {fileID: 8300000, guid: 759122c9bfd5cf74b822ba41ced0d340, type: 3}
+  - {fileID: 8300000, guid: 9505c08ac095bf14a842c419ee678894, type: 3}
+  - {fileID: 8300000, guid: daccaaf61cdab724886770358c2248b4, type: 3}
+  - {fileID: 8300000, guid: 43e4b4bb612fd214f844123e2bd38f99, type: 3}
+  - {fileID: 8300000, guid: 202858e7480e45c4cadb3ebdeb3f1ed5, type: 3}
   _text: {fileID: 0}
 --- !u!65 &351378283
 BoxCollider:
@@ -1655,6 +1661,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37fa64554d04fc2498579034db0d883f, type: 3}
   useClips:
   - {fileID: 8300000, guid: ef56c102653ba584495fa22827452595, type: 3}
+  - {fileID: 8300000, guid: 4791624836e7f0741a0f237da5dd5555, type: 3}
+  - {fileID: 8300000, guid: 759122c9bfd5cf74b822ba41ced0d340, type: 3}
+  - {fileID: 8300000, guid: 9505c08ac095bf14a842c419ee678894, type: 3}
+  - {fileID: 8300000, guid: daccaaf61cdab724886770358c2248b4, type: 3}
+  - {fileID: 8300000, guid: 43e4b4bb612fd214f844123e2bd38f99, type: 3}
+  - {fileID: 8300000, guid: 202858e7480e45c4cadb3ebdeb3f1ed5, type: 3}
   _text: {fileID: 0}
 --- !u!65 &576447502
 BoxCollider:
@@ -2791,6 +2803,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37fa64554d04fc2498579034db0d883f, type: 3}
   useClips:
   - {fileID: 8300000, guid: ef56c102653ba584495fa22827452595, type: 3}
+  - {fileID: 8300000, guid: 4791624836e7f0741a0f237da5dd5555, type: 3}
+  - {fileID: 8300000, guid: 759122c9bfd5cf74b822ba41ced0d340, type: 3}
+  - {fileID: 8300000, guid: 9505c08ac095bf14a842c419ee678894, type: 3}
+  - {fileID: 8300000, guid: daccaaf61cdab724886770358c2248b4, type: 3}
+  - {fileID: 8300000, guid: 43e4b4bb612fd214f844123e2bd38f99, type: 3}
+  - {fileID: 8300000, guid: 202858e7480e45c4cadb3ebdeb3f1ed5, type: 3}
   _text: {fileID: 0}
 --- !u!65 &988375703
 BoxCollider:
@@ -2923,6 +2941,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37fa64554d04fc2498579034db0d883f, type: 3}
   useClips:
   - {fileID: 8300000, guid: ef56c102653ba584495fa22827452595, type: 3}
+  - {fileID: 8300000, guid: 4791624836e7f0741a0f237da5dd5555, type: 3}
+  - {fileID: 8300000, guid: 759122c9bfd5cf74b822ba41ced0d340, type: 3}
+  - {fileID: 8300000, guid: 9505c08ac095bf14a842c419ee678894, type: 3}
+  - {fileID: 8300000, guid: daccaaf61cdab724886770358c2248b4, type: 3}
+  - {fileID: 8300000, guid: 43e4b4bb612fd214f844123e2bd38f99, type: 3}
+  - {fileID: 8300000, guid: 202858e7480e45c4cadb3ebdeb3f1ed5, type: 3}
   _text: {fileID: 0}
 --- !u!65 &1028398001
 BoxCollider:
@@ -3708,7 +3732,7 @@ GameObject:
   - component: {fileID: 1253050533}
   m_Layer: 0
   m_Name: Item Volume
-  m_TagString: Untagged
+  m_TagString: ItemVolume
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3738,7 +3762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253050532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 124.06791}
+  m_LocalPosition: {x: 0, y: 0, z: 124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4240,7 +4264,7 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 5}
-  m_Size: {x: 1, y: 1, z: 10}
+  m_Size: {x: 0.5, y: 0.5, z: 10}
   m_FadeFactor: 1
 --- !u!4 &1358834994
 Transform:
@@ -4250,7 +4274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358834992}
   m_LocalRotation: {x: 0.7071065, y: -0, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 3.5, y: -0.7500158, z: 124.55}
+  m_LocalPosition: {x: 3.5, y: -0.7500149, z: 125.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5387,6 +5411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerAudioSource: {fileID: 0}
   _text: {fileID: 0}
+  _volume: {fileID: 0}
   _candy: 0
   _candyTimer: 0
   _candyDisplay: {fileID: 2140607135}
@@ -5412,7 +5437,6 @@ MonoBehaviour:
   _paranoiaTimer: 19
   _paranoiaDisplay: {fileID: 1465241189}
   _GO_SCP215: {fileID: 0}
-  _CAPP: {fileID: 0}
   _stimulated: 0
   _stimulatedTimer: 9.5
   _stimulatedDisplay: {fileID: 1616285011}
@@ -6480,6 +6504,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37fa64554d04fc2498579034db0d883f, type: 3}
   useClips:
   - {fileID: 8300000, guid: ef56c102653ba584495fa22827452595, type: 3}
+  - {fileID: 8300000, guid: 4791624836e7f0741a0f237da5dd5555, type: 3}
+  - {fileID: 8300000, guid: 759122c9bfd5cf74b822ba41ced0d340, type: 3}
+  - {fileID: 8300000, guid: 9505c08ac095bf14a842c419ee678894, type: 3}
+  - {fileID: 8300000, guid: daccaaf61cdab724886770358c2248b4, type: 3}
+  - {fileID: 8300000, guid: 43e4b4bb612fd214f844123e2bd38f99, type: 3}
+  - {fileID: 8300000, guid: 202858e7480e45c4cadb3ebdeb3f1ed5, type: 3}
   _text: {fileID: 0}
 --- !u!65 &2021554593
 BoxCollider:
@@ -6552,7 +6582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053727495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 124.90737}
+  m_LocalPosition: {x: 0, y: 0, z: 124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

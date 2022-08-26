@@ -28,6 +28,7 @@ TagManager:
   - DoorCheck2
   - Document
   - SCP/1874
+  - ItemVolume
   layers:
   - Default
   - TransparentFX
