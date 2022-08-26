@@ -187,6 +187,12 @@ public class Item : ScriptableObject
         }
         #endregion 
         #region SCPS
+        if(name=="SCP-1079")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._candy++;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._candyTimer=GameObject.FindWithTag("Player").GetComponent<Effects>()._candy*15f;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP1079=gameObjectOfItem;
+        }
         if(name=="SCP-500")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._cured=true;
@@ -204,6 +210,12 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energized=true;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energizedTimer=1000;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP207=gameObjectOfItem;
+        }
+        if(name=="SCP-198")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._hurt=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._hurtTimer=1000;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP198=gameObjectOfItem;
         }
         if(name=="SCP-198")
         {

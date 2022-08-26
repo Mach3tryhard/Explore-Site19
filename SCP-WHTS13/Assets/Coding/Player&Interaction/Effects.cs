@@ -12,6 +12,14 @@ public class Effects : MonoBehaviour
     public AudioSource _playerAudioSource;
     public TextMeshProUGUI _text;
 
+    [Header("SCP 1079")]
+    public float _candy=0; 
+    public float _candyTimer=0;
+    [SerializeField] private GameObject _candyDisplay;
+    public GameObject _GO_SCP1079;
+    public GameObject _candyDecal;
+    public float _candyDecalTimer=1;
+
     [Header("SCP 500")]
     public bool _cured=false; 
     public float _curedTimer=10;
@@ -106,6 +114,39 @@ public class Effects : MonoBehaviour
             _player.GetComponent<FirstPersonController>().crouchSpeed=_player.GetComponent<FirstPersonController>().crouchSpeed-0.5f;
             _player.GetComponent<FirstPersonController>().slopeSpeed=_player.GetComponent<FirstPersonController>().slopeSpeed-3.75f;
             _stimulatedDisplay.GetComponent<RawImage>().enabled=false;
+        }
+        /// SCP-1079
+        if(_candy>0 && _candyTimer%15==0)
+        {
+            _text.enabled=true;
+            _text.text = "You feel a tingling sensations.";
+            _candyDisplay.GetComponent<RawImage>().enabled=true;
+            _playerAudioSource.PlayOneShot(_GO_SCP1079.GetComponent<ItemPickup>().useClips[0]);
+        }
+        if(_candy>0 && _candyTimer>0)
+        {
+            _candyTimer-=Time.deltaTime;
+            _candyDecalTimer-=Time.deltaTime;
+            ///
+            if(_candyDecalTimer<=0)
+            {
+                Instantiate(_candyDecal, _player.transform.position, Quaternion.identity);
+                _candyDecalTimer=1;
+            }
+            if(_candyTimer<=2)
+            {
+                _candyDisplay.GetComponent<RawImage>().enabled=!_candyDisplay.GetComponent<RawImage>().enabled;
+            }
+            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+        }
+        if(_candyTimer<0)
+        {
+            _text.enabled=false;
+            _candyTimer=0;
+            /// SPEED BACK
+            _candyDisplay.GetComponent<RawImage>().enabled=false;
         }
         /// SCP-500
         if(_cured==true && _curedTimer==10)
