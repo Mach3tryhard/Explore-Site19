@@ -31,7 +31,7 @@ public class ButtonInteract1 : Interacteble
             _text.enabled=true;
             if(SecurityLevel<0)
             {
-                _text.text = "Use elevator Door.";
+                _text.text = "Use elevator Door";
             }
             else
             {

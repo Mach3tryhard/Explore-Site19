@@ -116,8 +116,8 @@ public class ElevatorButton : Interacteble
         {
             /// Text Popup
             _text.enabled=true;
-            if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer>0)_text.text = "You are using the elevator.";
-            else _text.text = "Use elevator.";
+            if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer>0)_text.text = "You are using the elevator";
+            else _text.text = "Use elevator";
             /// Crosshair move
             Camera _camera = GameObject.FindWithTag("Player").transform.GetChild(0).gameObject.GetComponent<Camera>();
             RectTransform _trans = GameObject.FindWithTag("Canvas").transform.GetChild(0).gameObject.GetComponent<RectTransform>();

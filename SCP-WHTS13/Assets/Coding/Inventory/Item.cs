@@ -193,6 +193,12 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._candyTimer=GameObject.FindWithTag("Player").GetComponent<Effects>()._candy*15f;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP1079=gameObjectOfItem;
         }
+        if(name=="SCP-268")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._invisible=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._invisibleTimer=5;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP268=gameObjectOfItem;
+        }
         if(name=="SCP-500")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._cured=true;
@@ -217,26 +223,12 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._hurtTimer=1000;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP198=gameObjectOfItem;
         }
-        if(name=="SCP-198")
+        if(name=="SCP-215")
         {
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._hurt=true;
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._hurtTimer=1000;
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP198=gameObjectOfItem;
-        }
-        if(name=="SCP-215" && isUsing==false)
-        {
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia=!GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP215=gameObjectOfItem;
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-            isUsing=true;
-        }
-        else
-        if(name=="SCP-215" && isUsing==true)
-        {
-            _TEXT.enabled=false;
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._paranoia=false;
-            playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-            isUsing=false;
+            isUsing=!isUsing;
         }
         #endregion
     }

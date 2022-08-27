@@ -25,6 +25,12 @@ public class Effects : MonoBehaviour
     private UnityEngine.Rendering.Universal.Vignette _candyPP;
     public GameObject _candyanimator;
 
+    [Header("SCP 268")]
+    public bool _invisible=false; 
+    public float _invisibleTimer=10;
+    [SerializeField] private GameObject _invisibleDisplay;
+    public GameObject _GO_SCP268;
+
     [Header("SCP 500")]
     public bool _cured=false; 
     public float _curedTimer=10;
@@ -323,7 +329,19 @@ public class Effects : MonoBehaviour
         if(_paranoia==false)
         {
             _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
-            _paranoiaTimer=19;
+            _text.enabled=false;
+        }
+        /// SCP-268
+        if(_invisible==true)
+        {
+            _text.enabled=true;
+            _text.text = "You feel wierd.";
+            _paranoiaDisplay.GetComponent<RawImage>().enabled=true;
+        }
+        if(_invisible==false)
+        {
+            _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
+            _text.enabled=false;
         }
     }
 }
