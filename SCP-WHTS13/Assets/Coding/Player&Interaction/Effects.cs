@@ -336,12 +336,14 @@ public class Effects : MonoBehaviour
         {
             _text.enabled=true;
             _text.text = "You feel wierd.";
-            _paranoiaDisplay.GetComponent<RawImage>().enabled=true;
+            _invisibleDisplay.GetComponent<RawImage>().enabled=true;
+            GameObject.FindWithTag("SCP/1874").GetComponent<Enemy>().lookRadius=0;
         }
         if(_invisible==false)
         {
-            _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
+            _invisibleDisplay.GetComponent<RawImage>().enabled=false;
             _text.enabled=false;
+            GameObject.FindWithTag("SCP/1874").GetComponent<Enemy>().lookRadius=10;
         }
     }
 }

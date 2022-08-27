@@ -4642,6 +4642,10 @@ MonoBehaviour:
   _candyDecal: {fileID: 1358834992}
   _candyDecalTimer: 1
   _candyanimator: {fileID: 0}
+  _invisible: 0
+  _invisibleTimer: 10
+  _invisibleDisplay: {fileID: 0}
+  _GO_SCP268: {fileID: 0}
   _cured: 0
   _curedTimer: 10
   _curedDisplay: {fileID: 898917180}
@@ -5544,7 +5548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19, y: -57}
+  m_AnchoredPosition: {x: -29, y: -57}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140607137
