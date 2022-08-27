@@ -17,5 +17,5 @@ MonoBehaviour:
   isUsing: 0
   gameObjectOfItem: {fileID: 0}
   oneTimeUse: 0
-  document: {fileID: 21300000, guid: 2c77954ac84067b40b94b872e2856a0c, type: 3}
+  document: {fileID: 21300000, guid: 49a9dd0f04217d54b937da9de2ce24cc, type: 3}
   isDocument: 1
