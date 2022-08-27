@@ -195,9 +195,11 @@ public class Item : ScriptableObject
         }
         if(name=="SCP-268")
         {
-            GameObject.FindWithTag("Player").GetComponent<Effects>()._invisible=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._invisible=!GameObject.FindWithTag("Player").GetComponent<Effects>()._invisible;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._invisibleTimer=5;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP268=gameObjectOfItem;
+            playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
+            isUsing=!isUsing;
         }
         if(name=="SCP-500")
         {
