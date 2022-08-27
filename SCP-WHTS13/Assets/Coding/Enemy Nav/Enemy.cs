@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
         if(distance <= lookRadius)
         {
+            agent.isStopped=false;
             //animator.SetBool("IsWalking", true);
             agent.SetDestination(target.position);
             if(distance<= 2)
