@@ -23,6 +23,7 @@ public class Effects : MonoBehaviour
     public GameObject _candyDecal;
     public float _candyDecalTimer=1;
     private UnityEngine.Rendering.Universal.Vignette _candyPP;
+    public GameObject _candyanimator;
 
     [Header("SCP 500")]
     public bool _cured=false; 
@@ -68,6 +69,12 @@ public class Effects : MonoBehaviour
         _text = GameObject.FindWithTag("TextInfo").GetComponent<TextMeshProUGUI>();
         _volume = GameObject.FindWithTag("ItemVolume").GetComponent<Volume>();
         _volume.profile.TryGet(out _candyPP);
+    }
+    //// UPDATE DECALS
+    void LateUpdate()
+    {
+        if(_candyanimator!=null)
+        _candyanimator.GetComponent<DecalProjector>().size=_candyanimator.GetComponent<DecalProjector>().size;
     }
 
     void Update()
@@ -136,7 +143,10 @@ public class Effects : MonoBehaviour
             ///
             if(_candyDecalTimer<=0)
             {
-                Instantiate(_candyDecal, _player.transform.position, Quaternion.Euler(90,0,Random.Range(0f, 180.0f)),_candyDecal.transform.parent.gameObject.transform);
+                _candyanimator = Instantiate(_candyDecal, _player.transform.position, Quaternion.Euler(90,0,Random.Range(0f, 360.0f)),_candyDecal.transform.parent.gameObject.transform);
+                if(_candy==1)_candyanimator.GetComponent<Animator>().Play("drip_small", 0 , 0.0f);
+                if(_candy==2)_candyanimator.GetComponent<Animator>().Play("drip_medium", 0 , 0.0f);
+                if(_candy>=3)_candyanimator.GetComponent<Animator>().Play("drip_big", 0 , 0.0f);
                 _playerAudioSource.PlayOneShot(_GO_SCP1079.GetComponent<ItemPickup>().useClips[UnityEngine.Random.Range(1, _GO_SCP1079.GetComponent<ItemPickup>().useClips.Length - 1)]);
                 _candyDecalTimer=1;
             }
@@ -144,7 +154,7 @@ public class Effects : MonoBehaviour
             {
                 _candyDisplay.GetComponent<RawImage>().enabled=!_candyDisplay.GetComponent<RawImage>().enabled;
             }
-            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime;
+            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime*_candy;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
         }
