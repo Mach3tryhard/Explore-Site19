@@ -130,10 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542769589569183809, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769589804515927, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769591012579457, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 3338095743125336826, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_Name
       value: Decontamination (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3836674321377010427, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 6750733455867927267, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -301,10 +317,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542769589569183809, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769589804515927, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769591012579457, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 3338095743125336826, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_Name
       value: Decontamination (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3836674321377010427, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 6750733455867927267, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -472,10 +504,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542769589569183809, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769589804515927, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
+    - target: {fileID: 1542769591012579457, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 3338095743125336826, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_Name
       value: Decontamination
       objectReference: {fileID: 0}
+    - target: {fileID: 3836674321377010427, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4460b86ad88438e4793bde3a7311c454, type: 2}
     - target: {fileID: 6750733455867927267, guid: 7295eacd33d43204dbfb3dc9fa6cc925, type: 3}
       propertyPath: m_RootOrder
       value: 0

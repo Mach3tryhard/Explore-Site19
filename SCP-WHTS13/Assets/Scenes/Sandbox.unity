@@ -56726,6 +56726,7 @@ MonoBehaviour:
   _energized: 0
   _energizedTimer: 1000
   _GO_SCP207: {fileID: 0}
+  _energizedPPTimer: 10
   _hurt: 0
   _hurtTimer: 1000
   _hurtDisplay: {fileID: 1214777313}

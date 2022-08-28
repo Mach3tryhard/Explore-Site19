@@ -1408,7 +1408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.5704088, y: 173.95253}
+  m_AnchoredPosition: {x: -0.5704088, y: 107.70253}
   m_SizeDelta: {x: 382.9669, y: 187.1076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &599479585
@@ -2866,7 +2866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.625, y: 97.5}
+  m_AnchoredPosition: {x: 2.625, y: 166}
   m_SizeDelta: {x: 167.75, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248335739
@@ -4717,7 +4717,7 @@ MonoBehaviour:
   _candyDecalTimer: 1
   _candyanimator: {fileID: 0}
   _invisible: 0
-  _invisibleTimer: 10
+  _invisibleTimer: 5
   _invisibleDisplay: {fileID: 476845725}
   _GO_SCP268: {fileID: 0}
   _cured: 0
@@ -4731,6 +4731,7 @@ MonoBehaviour:
   _energized: 0
   _energizedTimer: 1000
   _GO_SCP207: {fileID: 0}
+  _energizedPPTimer: 10
   _hurt: 0
   _hurtTimer: 1000
   _hurtDisplay: {fileID: 1787796644}

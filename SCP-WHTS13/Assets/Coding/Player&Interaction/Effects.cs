@@ -17,7 +17,7 @@ public class Effects : MonoBehaviour
 
     [Header("SCP 1079")]
     public float _candy=0; 
-    public float _candyTimer=0;
+    public float _candyTimer=1;
     [SerializeField] private GameObject _candyDisplay;
     public GameObject _GO_SCP1079;
     public GameObject _candyDecal;
@@ -27,9 +27,10 @@ public class Effects : MonoBehaviour
 
     [Header("SCP 268")]
     public bool _invisible=false; 
-    public float _invisibleTimer=10;
+    public float _invisibleTimer=5;
     [SerializeField] private GameObject _invisibleDisplay;
     public GameObject _GO_SCP268;
+    private UnityEngine.Rendering.Universal.FilmGrain _invisiblePP;
 
     [Header("SCP 500")]
     public bool _cured=false; 
@@ -47,6 +48,8 @@ public class Effects : MonoBehaviour
     public bool _energized=false; 
     public float _energizedTimer=1000;
     public GameObject _GO_SCP207;
+    private UnityEngine.Rendering.Universal.LensDistortion _energizedPP;
+    public float _energizedPPTimer=10;
 
     [Header("SCP 198")]
     public bool _hurt=false; 
@@ -75,6 +78,8 @@ public class Effects : MonoBehaviour
         _text = GameObject.FindWithTag("TextInfo").GetComponent<TextMeshProUGUI>();
         _volume = GameObject.FindWithTag("ItemVolume").GetComponent<Volume>();
         _volume.profile.TryGet(out _candyPP);
+        _volume.profile.TryGet(out _invisiblePP);
+        _volume.profile.TryGet(out _energizedPP);
     }
     //// UPDATE DECALS
     void LateUpdate()
@@ -164,11 +169,11 @@ public class Effects : MonoBehaviour
             GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
         }
-        if(_candyTimer<0)
+        if(_candyTimer<=0 && _candy>0)
         {
             _text.enabled=false;
             _candyTimer=0;
-            _candyPP.intensity.value=0f;
+            _candyPP.intensity.value-=Time.deltaTime/50;
             /// SPEED BACK
             _candyDisplay.GetComponent<RawImage>().enabled=false;
         }
@@ -270,12 +275,16 @@ public class Effects : MonoBehaviour
             {
                 _stimulatedDisplay.GetComponent<RawImage>().enabled=!_stimulatedDisplay.GetComponent<RawImage>().enabled;
             }
+            if(_energizedPPTimer>0)
+            {
+                _energizedPPTimer-=Time.deltaTime;
+                _energizedPP.intensity.value-=Time.deltaTime/20;
+            }
         }
-        if(_energizedTimer<0)
+        if(_energizedTimer<0 && _energized==true)
         {
             _text.enabled=false;
             _energized=false;
-            _energizedTimer=10;
             /// SPEED BACK
             _player.GetComponent<FirstPersonController>().staminaUseMultiplier=15;
             _player.GetComponent<FirstPersonController>().walkSpeed=_player.GetComponent<FirstPersonController>().walkSpeed-2f;
@@ -283,6 +292,15 @@ public class Effects : MonoBehaviour
             _player.GetComponent<FirstPersonController>().crouchSpeed=_player.GetComponent<FirstPersonController>().crouchSpeed-1f;
             _player.GetComponent<FirstPersonController>().slopeSpeed=_player.GetComponent<FirstPersonController>().slopeSpeed-7.5f;
             _stimulatedDisplay.GetComponent<RawImage>().enabled=false;
+            _energizedPPTimer=10;
+        }
+        if(_energizedTimer<0)
+        {
+            if(_energizedPPTimer>0)
+            {
+                _energizedPPTimer-=Time.deltaTime;
+                _energizedPP.intensity.value+=Time.deltaTime/20;
+            }
         }
         /// SCP-198
         if(_hurt==true && _hurtTimer==1000)
@@ -329,7 +347,6 @@ public class Effects : MonoBehaviour
         if(_paranoia==false)
         {
             _paranoiaDisplay.GetComponent<RawImage>().enabled=false;
-            _text.enabled=false;
         }
         /// SCP-268
         if(_invisible==true)
@@ -338,12 +355,27 @@ public class Effects : MonoBehaviour
             _text.text = "You feel wierd.";
             _invisibleDisplay.GetComponent<RawImage>().enabled=true;
             GameObject.FindWithTag("SCP/1874").GetComponent<Enemy>().lookRadius=0;
+            if(_invisibleTimer>0)
+            {
+                _invisibleTimer-=Time.deltaTime;
+                if(_invisiblePP.intensity.value!=1)
+                {
+                    _invisiblePP.intensity.value+=Time.deltaTime/5;
+                }
+            }
         }
         if(_invisible==false)
         {
             _invisibleDisplay.GetComponent<RawImage>().enabled=false;
-            _text.enabled=false;
             GameObject.FindWithTag("SCP/1874").GetComponent<Enemy>().lookRadius=10;
+            if(_invisibleTimer>0)
+            {
+                _invisibleTimer-=Time.deltaTime;
+                if(_invisiblePP.intensity.value!=0)
+                {
+                    _invisiblePP.intensity.value-=Time.deltaTime/5;
+                }
+            }
         }
     }
 }

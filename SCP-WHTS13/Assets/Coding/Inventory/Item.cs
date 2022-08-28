@@ -200,6 +200,7 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP268=gameObjectOfItem;
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
             isUsing=!isUsing;
+            _TEXT.enabled=false;
         }
         if(name=="SCP-500")
         {
@@ -217,6 +218,7 @@ public class Item : ScriptableObject
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energized=true;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._energizedTimer=1000;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._energizedPPTimer=10;
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP207=gameObjectOfItem;
         }
         if(name=="SCP-198")
@@ -231,6 +233,7 @@ public class Item : ScriptableObject
             GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP215=gameObjectOfItem;
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
             isUsing=!isUsing;
+            _TEXT.enabled=false;
         }
         #endregion
     }
