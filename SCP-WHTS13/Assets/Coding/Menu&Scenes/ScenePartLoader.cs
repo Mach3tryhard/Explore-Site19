@@ -21,6 +21,10 @@ public class ScenePartLoader : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
+
+    void Update()
+    {
         if(SceneManager.sceneCount > 0)
         {
             for(int i=0;i<SceneManager.sceneCount;++i)
@@ -32,10 +36,6 @@ public class ScenePartLoader : MonoBehaviour
                 }
             }
         }
-    }
-
-    void Update()
-    {
         if(checkMethod == CheckMethod.Distance)
         {
             DistanceCheck();

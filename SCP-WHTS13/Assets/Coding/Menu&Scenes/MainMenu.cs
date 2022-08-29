@@ -18,8 +18,9 @@ public class MainMenu : MonoBehaviour
     {
         ShowLoadingScreen();
         scenesToLoad.Add(SceneManager.LoadSceneAsync("GamePlay"));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Transitions", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("Spawn", LoadSceneMode.Additive));
         //scenesToLoad.Add(SceneManager.LoadSceneAsync("SECTOR J", LoadSceneMode.Additive));
+        //scenesToLoad.Add(SceneManager.LoadSceneAsync("Transitions", LoadSceneMode.Additive));
         //scenesToLoad.Add(SceneManager.LoadSceneAsync("SECTOR L", LoadSceneMode.Additive));
         StartCoroutine(LoadingScreen());
     }
