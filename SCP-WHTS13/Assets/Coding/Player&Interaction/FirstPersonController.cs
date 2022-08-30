@@ -432,7 +432,7 @@ public class FirstPersonController : MonoBehaviour
         regeneratingHealth = StartCoroutine(RegenerateHealth());
     }
 
-    private void KillPlayer()
+    public void KillPlayer()
     {
         currentHealth = 0;
 

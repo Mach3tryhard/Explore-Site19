@@ -93,8 +93,8 @@ public class Effects : MonoBehaviour
         ///KILL
         if(_player.GetComponent<FirstPersonController>().currentHealth<=0)
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            print("DEAD");
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth=0;
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().KillPlayer();
         }
         /// EPIPEN
         if(_stimulated==true && _stimulatedTimer==9.5f)
