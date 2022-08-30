@@ -59,9 +59,12 @@ public class ElevatorButton : Interacteble
             if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer<=2 && step1[2]==true)
             {
                 playerAudioSource.PlayOneShot(elevatorNoises[0]);
-                playerAudioSource.PlayOneShot(doorClipsopen[UnityEngine.Random.Range(0, doorClipsopen.Length - 1)]);
-                myDoor2.Play("dor_open", 0, 0.0f);
-                GameObject.FindWithTag("DoorCheck2").GetComponent<DoorCheck>().opened=true;
+                if(GameObject.FindWithTag("DoorCheck2").GetComponent<DoorCheck>().opened==false)
+                {
+                    playerAudioSource.PlayOneShot(doorClipsopen[UnityEngine.Random.Range(0, doorClipsopen.Length - 1)]);
+                    myDoor2.Play("dor_open", 0, 0.0f);
+                    GameObject.FindWithTag("DoorCheck2").GetComponent<DoorCheck>().opened=true;
+                }
                 step1[2]=false;
             }
             if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer<=0)
@@ -77,9 +80,9 @@ public class ElevatorButton : Interacteble
                 playerAudioSource.PlayOneShot(ScanSounds[0]);
                 if(GameObject.FindWithTag("DoorCheck2").GetComponent<DoorCheck>().opened==true)
                 {
-                    myDoor1.Play("dor_close", 0, 0.0f);
+                    myDoor2.Play("dor_close", 0, 0.0f);
                     playerAudioSource.PlayOneShot(doorClipsclose[UnityEngine.Random.Range(0, doorClipsclose.Length - 1)]);
-                    GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened=false;
+                    GameObject.FindWithTag("DoorCheck2").GetComponent<DoorCheck>().opened=false;
                 }
                 step2[0]=false;
             }
@@ -97,9 +100,12 @@ public class ElevatorButton : Interacteble
             if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer<=2 && step2[2]==true)
             {
                 playerAudioSource.PlayOneShot(elevatorNoises[0]);
-                playerAudioSource.PlayOneShot(doorClipsopen[UnityEngine.Random.Range(0, doorClipsopen.Length - 1)]);
-                myDoor2.Play("dor_open", 0, 0.0f);
-                GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened=true;
+                if(GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened==false)
+                {
+                    playerAudioSource.PlayOneShot(doorClipsopen[UnityEngine.Random.Range(0, doorClipsopen.Length - 1)]);
+                    myDoor1.Play("dor_open", 0, 0.0f);
+                    GameObject.FindWithTag("DoorCheck").GetComponent<DoorCheck>().opened=true;
+                }
                 step2[2]=false;
             }
             if(GameObject.FindWithTag("Elevator").GetComponent<ElevatorTimer>().ElevTimer<=0)

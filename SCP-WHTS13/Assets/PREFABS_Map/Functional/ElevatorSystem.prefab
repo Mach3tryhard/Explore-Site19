@@ -1677,6 +1677,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6934745709875832724, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
+      propertyPath: m_Name
+      value: DOR1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934745709875832724, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2109,6 +2113,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6934745709875832724, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
+      propertyPath: m_Name
+      value: DOR2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934745709875832724, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2140,6 +2148,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7853226249902126747, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ee7b340266484d14d924d887e8372f3b, type: 2}
     - target: {fileID: 7853226249956323449, guid: b0acff61aec15a2479575fc1e8a1d05f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -2318,8 +2330,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 732e434f1eab48e4cb1e0494bcb98b30, type: 3}
   ScanSounds:
   - {fileID: 8300000, guid: 43b93a97712fd2443ab28a5df51d5ddb, type: 3}
-  myDoor1: {fileID: 2503644753985681118}
-  myDoor2: {fileID: 6625270844554009431}
+  myDoor1: {fileID: 6625270844554009431}
+  myDoor2: {fileID: 2503644753985681118}
   GameObjButton: {fileID: 3350628034873982567}
   _text: {fileID: 0}
   _player: {fileID: 0}
