@@ -15,6 +15,13 @@ public class Effects : MonoBehaviour
     public TextMeshProUGUI _text;
     public Volume _volume;
 
+    [Header("SCP 303")]
+    public bool _3031=false;
+    public bool _3032=false;
+    public bool _3033=false;
+    public GameObject _303gameobject;
+    public float _handCounter=0;
+
     [Header("SCP 1079")]
     public float _candy=0; 
     public float _candyTimer=1;
@@ -376,6 +383,50 @@ public class Effects : MonoBehaviour
                     _invisiblePP.intensity.value-=Time.deltaTime/5;
                 }
             }
+        }
+        /// SCP-303
+        if(_3033==true)
+        {
+            _text.enabled=true;
+            _text.text="Tastes like cherry";
+            _playerAudioSource.PlayOneShot(_303gameobject.GetComponent<ItemPickup>().useClips[0]);
+            if(_player.GetComponent<FirstPersonController>().currentHealth>90)_player.GetComponent<FirstPersonController>().currentHealth=100;
+            else _player.GetComponent<FirstPersonController>().currentHealth+=10;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _3033=false;
+        }
+        if(_3032==true)
+        {
+            _text.enabled=true;
+            _text.text="Tastes like blueberry";
+            _playerAudioSource.PlayOneShot(_303gameobject.GetComponent<ItemPickup>().useClips[0]);
+            if(_player.GetComponent<FirstPersonController>().currentStamina>90)_player.GetComponent<FirstPersonController>().currentStamina=100;
+            else _player.GetComponent<FirstPersonController>().currentStamina+=10;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().staminaBar.value=_player.GetComponent<FirstPersonController>().currentStamina;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().StaminaPercent.text=(int)_player.GetComponent<FirstPersonController>().currentStamina+"%";
+            _3032=false;
+        }
+        if(_3031==true)
+        {
+            _text.enabled=true;
+            _text.text="Tastes like lemon";
+            _playerAudioSource.PlayOneShot(_303gameobject.GetComponent<ItemPickup>().useClips[0]);
+            _3031=false;
+        }
+        if(_handCounter==3)
+        {
+            _playerAudioSource.PlayOneShot(GameObject.FindWithTag("SCP/330").GetComponent<ItemPickup>().useClips[1]);
+            _handCounter++;
+        }
+        if(_handCounter>2)
+        {
+            _text.enabled=true;
+            _text.text="Your hands have been cut You took more than two";
+            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime*5;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
+            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _player.GetComponent<FirstPersonController>().canInteract=false;
         }
     }
 }

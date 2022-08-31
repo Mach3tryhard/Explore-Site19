@@ -235,6 +235,21 @@ public class Item : ScriptableObject
             isUsing=!isUsing;
             _TEXT.enabled=false;
         }
+        if(name=="SCP-330-1")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._3031=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._303gameobject=gameObjectOfItem;
+        }
+        if(name=="SCP-330-2")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._3032=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._303gameobject=gameObjectOfItem;
+        }
+        if(name=="SCP-330-3")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._3033=true;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._303gameobject=gameObjectOfItem;
+        }
         #endregion
     }
 }

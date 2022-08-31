@@ -39,6 +39,10 @@ public class ItemPickup : Interacteble
     {
         Debug.Log("Picked up " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);
+        if(item.name=="SCP-330-1" || item.name=="SCP-330-2" || item.name=="SCP-330-3")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._handCounter++;
+        }
         if(wasPickedUp==true)
         {
             item.gameObjectOfItem = GameObjItem;
