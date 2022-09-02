@@ -26,10 +26,7 @@ public class Item : ScriptableObject
         if(name=="Medkit")
         {
             playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
-            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth+=50;
-            if(GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth>100)GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth=100;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth+"%";
+            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().ApplyHeal(50);
             Debug.Log("Using " + name);
         }
         if(name=="NightVisionGoggle")
@@ -85,10 +82,10 @@ public class Item : ScriptableObject
                 GameObject.FindWithTag("SCP/173").GetComponent<SCPXXXX>().damageDealt/=2;
                 GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt/=2;
                 ///movement slowed
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=3f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=6f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=1.5f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed=11.25f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed-=1f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed-=2f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed-=0.5f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed-=3.75f;
                 Debug.Log("Activating" + name);
                 isUsing = true;
             }
@@ -100,10 +97,10 @@ public class Item : ScriptableObject
                 GameObject.FindWithTag("SCP/173").GetComponent<SCPXXXX>().damageDealt*=2;
                 GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt*=2;
                 ///movement slowed
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=4f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=8f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=2f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed=15f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed+=1f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed+=2f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed+=0.5f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed+=3.75f;
                 Debug.Log("DEActivating" + name);
                 isUsing = false;
             }
@@ -114,10 +111,10 @@ public class Item : ScriptableObject
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[0]);
                 GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt=0;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=3f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=6f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=1.5f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed=11.25f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed-=1f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed-=2f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed-=0.5f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed-=3.75f;
                 Debug.Log("Activating" + name);
                 isUsing = true;
             }
@@ -126,10 +123,10 @@ public class Item : ScriptableObject
             {
                 playerAudioSource.PlayOneShot(gameObjectOfItem.GetComponent<ItemPickup>().useClips[1]);
                 GameObject.FindWithTag("SCP/008").GetComponent<SCPXXXX>().damageDealt=20;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed=4f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed=8f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed=2f;
-                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed=15f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().walkSpeed+=1f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().sprintSpeed+=2f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().crouchSpeed+=0.5f;
+                GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().slopeSpeed+=3.75f;
                 Debug.Log("Activating" + name);
                 isUsing = false;
             }

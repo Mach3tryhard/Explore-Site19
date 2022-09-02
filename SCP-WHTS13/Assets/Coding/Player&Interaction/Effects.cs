@@ -172,9 +172,7 @@ public class Effects : MonoBehaviour
             {
                 _candyDisplay.GetComponent<RawImage>().enabled=!_candyDisplay.GetComponent<RawImage>().enabled;
             }
-            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime*_candy;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _player.GetComponent<FirstPersonController>().ApplyDamage(Time.deltaTime*_candy);
         }
         if(_candyTimer<=0 && _candy>0)
         {
@@ -205,10 +203,8 @@ public class Effects : MonoBehaviour
         {
             _curedTimer-=Time.deltaTime;
             /// HP AND SPRINT
-            _player.GetComponent<FirstPersonController>().currentHealth=100;
+            _player.GetComponent<FirstPersonController>().ApplyHeal(100);
             _player.GetComponent<FirstPersonController>().currentStamina=100;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
             GameObject.FindWithTag("Canvas").GetComponent<UI>().staminaBar.value=_player.GetComponent<FirstPersonController>().currentStamina;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().StaminaPercent.text=(int)_player.GetComponent<FirstPersonController>().currentStamina+"%";
             if(_curedTimer<=2)
@@ -232,16 +228,13 @@ public class Effects : MonoBehaviour
             _chilledDisplay.GetComponent<RawImage>().enabled=true;
             _playerAudioSource.PlayOneShot(_GO_SCP484.GetComponent<ItemPickup>().useClips[0]);
             if(_stimulated==true)
-            _stimulatedTimer=2;
+                _stimulatedTimer=2;
         }
         if(_chilled==true)
         {
             _chilledTimer-=Time.deltaTime;
             /// HP AND SPRINT
-            if(_player.GetComponent<FirstPersonController>().currentHealth<100)
-                _player.GetComponent<FirstPersonController>().currentHealth+=Time.deltaTime;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _player.GetComponent<FirstPersonController>().ApplyHeal(Time.deltaTime);
             if(_chilledTimer<=2)
             {
                 _chilledDisplay.GetComponent<RawImage>().enabled=!_chilledDisplay.GetComponent<RawImage>().enabled;
@@ -271,11 +264,9 @@ public class Effects : MonoBehaviour
         {
             _energizedTimer-=Time.deltaTime;
             /// HP AND SPRINT
-            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime;
+            _player.GetComponent<FirstPersonController>().ApplyDamage(Time.deltaTime);
             _player.GetComponent<FirstPersonController>().currentStamina=100;
             _player.GetComponent<FirstPersonController>().staminaUseMultiplier=0;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
             GameObject.FindWithTag("Canvas").GetComponent<UI>().staminaBar.value=_player.GetComponent<FirstPersonController>().currentStamina;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().StaminaPercent.text=(int)_player.GetComponent<FirstPersonController>().currentStamina+"%";
             if(_energizedTimer<=2)
@@ -322,13 +313,11 @@ public class Effects : MonoBehaviour
             _hurtTimer-=Time.deltaTime;
             /// HP
             _player.GetComponent<FirstPersonController>().timeBeforeStaminaRegenStarts=1000;
-            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime;
+            _player.GetComponent<FirstPersonController>().ApplyDamage(Time.deltaTime);
             if(_player.GetComponent<FirstPersonController>().currentStamina>0)
             {
                 _player.GetComponent<FirstPersonController>().currentStamina-=Time.deltaTime;
             }
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
             GameObject.FindWithTag("Canvas").GetComponent<UI>().staminaBar.value=_player.GetComponent<FirstPersonController>().currentStamina;
             GameObject.FindWithTag("Canvas").GetComponent<UI>().StaminaPercent.text=(int)_player.GetComponent<FirstPersonController>().currentStamina+"%";
             if(_hurtTimer<=2)
@@ -390,10 +379,7 @@ public class Effects : MonoBehaviour
             _text.enabled=true;
             _text.text="Tastes like cherry";
             _playerAudioSource.PlayOneShot(_303gameobject.GetComponent<ItemPickup>().useClips[0]);
-            if(_player.GetComponent<FirstPersonController>().currentHealth>90)_player.GetComponent<FirstPersonController>().currentHealth=100;
-            else _player.GetComponent<FirstPersonController>().currentHealth+=10;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _player.GetComponent<FirstPersonController>().ApplyHeal(20);
             _3033=false;
         }
         if(_3032==true)
@@ -423,9 +409,7 @@ public class Effects : MonoBehaviour
         {
             _text.enabled=true;
             _text.text="Your hands have been cut You took more than two";
-            _player.GetComponent<FirstPersonController>().currentHealth-=Time.deltaTime*5;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().healthBar.value=_player.GetComponent<FirstPersonController>().currentHealth;
-            GameObject.FindWithTag("Canvas").GetComponent<UI>().HealthPercent.text=(int)_player.GetComponent<FirstPersonController>().currentHealth+"%";
+            _player.GetComponent<FirstPersonController>().ApplyDamage(Time.deltaTime*5);
             _player.GetComponent<FirstPersonController>().canInteract=false;
         }
     }

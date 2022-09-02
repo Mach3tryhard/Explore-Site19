@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class FirstPersonController : MonoBehaviour
     public bool canInteract = true;
     [SerializeField] private bool useFootsteps = true;
     [SerializeField] private bool useStamina = true;
+
+    [Header("Volume")]
+    public Volume _volumePlayer;
+    public UnityEngine.Rendering.Universal.Vignette _bloodMargin;
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -48,7 +54,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float timeBeforeRegenStarts = 3;
     [SerializeField] private float healthValueIncrement = 0f;
     [SerializeField] private float healthTimeIncrement = 0.1f;
-    public float currentHealth;
+    public float currentHealth=100;
     private Coroutine regeneratingHealth;
     public static Action<float> OnTakeDamage;
     public static Action<float> OnDamage;
@@ -150,6 +156,8 @@ public class FirstPersonController : MonoBehaviour
 
     void Awake()
     {
+        //_volumePlayer = GameObject.FindWithTag("PP/Item").GetComponent<Volume>();
+        _volumePlayer.profile.TryGet(out _bloodMargin);
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
@@ -159,7 +167,6 @@ public class FirstPersonController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
     void Update()
     {
         if(CanMove)
@@ -414,10 +421,11 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void ApplyDamage(float dmg)
+    public void ApplyDamage(float dmg)
     {
         currentHealth -= dmg;
         OnDamage?.Invoke(currentHealth);
+        _bloodMargin.intensity.value+=dmg/400;
 
         if(currentHealth<=0)
         {
@@ -430,6 +438,27 @@ public class FirstPersonController : MonoBehaviour
         }
 
         regeneratingHealth = StartCoroutine(RegenerateHealth());
+    }
+
+    public void ApplyHeal(float heal)
+    {
+        if(currentHealth+heal>100)
+        {
+            currentHealth=100;
+        }
+        else
+        {
+            currentHealth += heal;
+        }
+        OnHeal?.Invoke(currentHealth);
+        if(heal/400>_bloodMargin.intensity.value)
+        {
+            _bloodMargin.intensity.value=0;
+        }
+        else
+        {
+            _bloodMargin.intensity.value-=heal/400;
+        }
     }
 
     public void KillPlayer()

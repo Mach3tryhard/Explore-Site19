@@ -29,6 +29,7 @@ TagManager:
   - Document
   - SCP/1874
   - ItemVolume
+  - SCP/330
   layers:
   - Default
   - TransparentFX
