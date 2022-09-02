@@ -425,7 +425,7 @@ public class FirstPersonController : MonoBehaviour
     {
         currentHealth -= dmg;
         OnDamage?.Invoke(currentHealth);
-        _bloodMargin.intensity.value+=dmg/400;
+        _bloodMargin.intensity.value+=dmg/200;
 
         if(currentHealth<=0)
         {
@@ -457,13 +457,14 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            _bloodMargin.intensity.value-=heal/400;
+            _bloodMargin.intensity.value-=heal/200;
         }
     }
 
     public void KillPlayer()
     {
         currentHealth = 0;
+        OnDamage?.Invoke(currentHealth);
 
         if(regeneratingHealth != null)
         {

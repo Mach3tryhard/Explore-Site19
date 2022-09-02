@@ -98,11 +98,11 @@ public class Effects : MonoBehaviour
     void Update()
     {
         ///KILL
-        if(_player.GetComponent<FirstPersonController>().currentHealth<=0)
+        /*if(_player.GetComponent<FirstPersonController>().currentHealth<=0)
         {
             GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth=0;
             GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().KillPlayer();
-        }
+        }*/
         /// EPIPEN
         if(_stimulated==true && _stimulatedTimer==9.5f)
         {
