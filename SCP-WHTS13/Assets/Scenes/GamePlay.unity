@@ -4898,6 +4898,10 @@ MonoBehaviour:
   _playerAudioSource: {fileID: 0}
   _text: {fileID: 0}
   _volume: {fileID: 0}
+  _1499Dimension: 0
+  _1499onetime: 0
+  _GO_SCP1499: {fileID: 0}
+  _playerLocation: {x: 0, y: 0, z: 0}
   _3031: 0
   _3032: 0
   _3033: 0
