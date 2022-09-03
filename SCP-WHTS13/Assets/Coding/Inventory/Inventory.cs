@@ -79,6 +79,7 @@ public class Inventory : MonoBehaviour
                 item.gameObjectOfItem.transform.parent = GameObject.FindWithTag("ItemParent").transform;
                 item.gameObjectOfItem.transform.position=PlaceItemHereOnDrop.position;
                 item.gameObjectOfItem.SetActive(true);
+                ///
                 items.Remove(item);
             }
             if(removetype==1)

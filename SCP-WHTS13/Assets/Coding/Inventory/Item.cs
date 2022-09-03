@@ -232,6 +232,13 @@ public class Item : ScriptableObject
             isUsing=!isUsing;
             _TEXT.enabled=false;
         }
+        if(name=="SCP-1499")
+        {
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._1499Dimension=!GameObject.FindWithTag("Player").GetComponent<Effects>()._1499Dimension;
+            GameObject.FindWithTag("Player").GetComponent<Effects>()._GO_SCP1499=gameObjectOfItem;
+            isUsing=!isUsing;
+            _TEXT.enabled=false;
+        }
         if(name=="SCP-330-1")
         {
             GameObject.FindWithTag("Player").GetComponent<Effects>()._3031=true;

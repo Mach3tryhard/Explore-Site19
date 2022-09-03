@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Spawn.unity
     guid: 04179d552dea1cd4cbcab02f031ccdf2
   - enabled: 1
+    path: Assets/Scenes/SCP1499.unity
+    guid: 2ddfe3a11673094439c5e7cfbc0a0680
+  - enabled: 1
     path: Assets/Scenes/Transitions.unity
     guid: 652c4d2d94d86454f947a926855ea8f6
   - enabled: 1

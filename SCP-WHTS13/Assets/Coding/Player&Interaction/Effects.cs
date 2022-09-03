@@ -15,6 +15,12 @@ public class Effects : MonoBehaviour
     public TextMeshProUGUI _text;
     public Volume _volume;
 
+    [Header("SCP 1499")]
+    public bool _1499Dimension=false;
+    public float _1499onetime=0;
+    public GameObject _GO_SCP1499;
+    public Vector3 _playerLocation = new Vector3(0,0,0);
+    
     [Header("SCP 303")]
     public bool _3031=false;
     public bool _3032=false;
@@ -97,12 +103,6 @@ public class Effects : MonoBehaviour
 
     void Update()
     {
-        ///KILL
-        /*if(_player.GetComponent<FirstPersonController>().currentHealth<=0)
-        {
-            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().currentHealth=0;
-            GameObject.FindWithTag("Player").GetComponent<FirstPersonController>().KillPlayer();
-        }*/
         /// EPIPEN
         if(_stimulated==true && _stimulatedTimer==9.5f)
         {
@@ -411,6 +411,31 @@ public class Effects : MonoBehaviour
             _text.text="Your hands have been cut You took more than two";
             _player.GetComponent<FirstPersonController>().ApplyDamage(Time.deltaTime*5);
             _player.GetComponent<FirstPersonController>().canInteract=false;
+        }
+        ///SCP-1499
+        if(_1499Dimension==true && _1499onetime==0)
+        {
+            SceneManager.LoadSceneAsync("SCP1499", LoadSceneMode.Additive);
+            _1499onetime=1;
+            _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
+            _playerLocation = _player.transform.position;
+            _player.GetComponent<FirstPersonController>().CanMove=false;
+            CharacterController cc = _player.GetComponent<CharacterController>();
+            cc.enabled=false;
+            _player.transform.position = new Vector3(_player.transform.position.x, 1003, _player.transform.position.z);
+            cc.enabled=true;
+            _player.GetComponent<FirstPersonController>().CanMove=true;
+        }
+        if(_1499Dimension==false && _1499onetime==1)
+        {
+            _1499onetime=0;
+            _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
+            CharacterController cc = _player.GetComponent<CharacterController>();
+            cc.enabled=false;
+            _player.transform.position = _playerLocation;
+            cc.enabled=true;
+            _player.GetComponent<FirstPersonController>().CanMove=true;
+            SceneManager.UnloadSceneAsync("SCP1499");
         }
     }
 }
