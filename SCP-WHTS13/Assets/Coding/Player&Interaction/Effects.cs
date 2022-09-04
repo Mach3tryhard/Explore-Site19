@@ -20,6 +20,7 @@ public class Effects : MonoBehaviour
     public float _1499onetime=0;
     public GameObject _GO_SCP1499;
     public Vector3 _playerLocation = new Vector3(0,0,0);
+    public Material _skybox;
     
     [Header("SCP 303")]
     public bool _3031=false;
@@ -415,6 +416,7 @@ public class Effects : MonoBehaviour
         ///SCP-1499
         if(_1499Dimension==true && _1499onetime==0)
         {
+            RenderSettings.skybox = _skybox;
             SceneManager.LoadSceneAsync("SCP1499", LoadSceneMode.Additive);
             _1499onetime=1;
             _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
@@ -436,6 +438,7 @@ public class Effects : MonoBehaviour
             cc.enabled=true;
             _player.GetComponent<FirstPersonController>().CanMove=true;
             SceneManager.UnloadSceneAsync("SCP1499");
+            RenderSettings.skybox = (null);
         }
     }
 }
