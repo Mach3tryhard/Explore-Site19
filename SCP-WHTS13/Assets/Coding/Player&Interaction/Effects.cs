@@ -417,6 +417,7 @@ public class Effects : MonoBehaviour
         if(_1499Dimension==true && _1499onetime==0)
         {
             RenderSettings.skybox = _skybox;
+            RenderSettings.ambientSkyColor = new Color(0.34375f,0.34375f,0.34375f,1f);
             SceneManager.LoadSceneAsync("SCP1499", LoadSceneMode.Additive);
             _1499onetime=1;
             _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
@@ -432,6 +433,7 @@ public class Effects : MonoBehaviour
         {
             _1499onetime=0;
             _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
+            RenderSettings.ambientSkyColor = new Color(0.171875f,0.171875f,0.171875f,1f);
             CharacterController cc = _player.GetComponent<CharacterController>();
             cc.enabled=false;
             _player.transform.position = _playerLocation;
