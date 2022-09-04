@@ -194,6 +194,11 @@ public class Effects : MonoBehaviour
             }
             _curedDisplay.GetComponent<RawImage>().enabled=true;
             _playerAudioSource.PlayOneShot(_GO_SCP500.GetComponent<ItemPickup>().useClips[0]);
+            if(_candy>0)
+            {
+                _candy=0;
+                _candyTimer=0;
+            }
             if(_energized==true)
                 _energizedTimer=2;
             _stimulatedTimer=2;
@@ -421,6 +426,7 @@ public class Effects : MonoBehaviour
             SceneManager.LoadSceneAsync("SCP1499", LoadSceneMode.Additive);
             _1499onetime=1;
             _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
+            _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[1]);
             _playerLocation = _player.transform.position;
             _player.GetComponent<FirstPersonController>().CanMove=false;
             CharacterController cc = _player.GetComponent<CharacterController>();
@@ -433,6 +439,7 @@ public class Effects : MonoBehaviour
         {
             _1499onetime=0;
             _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[0]);
+            _playerAudioSource.PlayOneShot(_GO_SCP1499.GetComponent<ItemPickup>().useClips[2]);
             RenderSettings.ambientSkyColor = new Color(0.171875f,0.171875f,0.171875f,1f);
             CharacterController cc = _player.GetComponent<CharacterController>();
             cc.enabled=false;
